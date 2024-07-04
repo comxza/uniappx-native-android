@@ -29,22 +29,19 @@ open class LoginListener : Activity, IUiListener {
         Tencent.setIsPermissionGranted(true, Build.MODEL);
         this.mTencent = Tencent.createInstance("1106089718", UTSAndroid.getUniActivity()!!, "uts.sdk.modules.yxTest.fileprovider");
     }
-    open fun onAppActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        console.log("onAppActivityResult", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:19");
-    }
     override fun onComplete(response: Any): Unit {
-        console.log(response, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:23");
+        console.log(response, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:22");
     }
     override fun onCancel(): Unit {
-        console.log("onCancel", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:26");
+        console.log("onCancel", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:25");
     }
     override fun onError(_param0: UiError): Unit {
-        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:29");
-        console.log("onError", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:30");
+        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:28");
+        console.log("onError", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:29");
     }
     override fun onWarning(_param0: Int): Unit {
-        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:33");
-        console.log("onWarning", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:34");
+        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:32");
+        console.log("onWarning", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:33");
     }
 }
 open class QQ : Activity {
@@ -54,7 +51,12 @@ open class QQ : Activity {
         this.mTencent = Tencent.createInstance("1106089718", UTSAndroid.getUniActivity()!!, "uts.sdk.modules.yxTest.fileprovider");
     }
     open fun register() {
-        console.log("this.mTencent", this.mTencent, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:54");
+        UTSAndroid.onAppActivityResult(fun(requestCode: Int, resultCode: Int, data: Intent?){
+            Tencent.onActivityResultData(requestCode, resultCode, data, LoginListener());
+            console.log("onAppActivityResult", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:55");
+        }
+        );
+        console.log("this.mTencent", this.mTencent, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:57");
         if (!this.mTencent!!.isSessionValid()) {
             this.mTencent!!.login(UTSAndroid.getUniActivity()!!, "get_simple_userinfo", LoginListener());
         }

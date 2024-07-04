@@ -32,9 +32,9 @@ android {
     signingConfigs {
         config {
             storeFile file("../app/debug.keystore")
-            storePassword "KEYSTORE_PASSWORD"
+            storePassword "adminadmindebug"
             keyAlias "androiddebugkey"
-            keyPassword "231123123asdasddasasddzxcvxzczxc"
+            keyPassword "adminadmindebug"
         }
     }
 

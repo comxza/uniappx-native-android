@@ -23,7 +23,7 @@
           "x86_64"
         ],
         "minSdkVersion": "21",
-        "targetSdkVersion": "35"
+        "targetSdkVersion": "34"
       },
       "icons": {
         "android": {
