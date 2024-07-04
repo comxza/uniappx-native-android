@@ -106,7 +106,7 @@ val __uniTabBar: Map<String, Any?>? = null;
 val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationBarTitleText" to "uni-app x"));
 fun defineAppConfig() {
     __uniConfig.entryPagePath = "/pages/index/index";
-    __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uni-app x", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8");
+    __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uniapp-x-demo", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8");
     __uniConfig.tabBar = __uniTabBar as Map<String, Any>?;
     __uniConfig.conditionUrl = "";
     __uniConfig.uniIdRouter = utsMapOf();

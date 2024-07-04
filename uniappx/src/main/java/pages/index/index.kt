@@ -38,7 +38,7 @@ open class GenPagesIndexIndex : BasePage {
                     "onClick"
                 ))
             )),
-            " wq "
+            " wqasasasas "
         ));
     }
     open var title: String by `$data`;

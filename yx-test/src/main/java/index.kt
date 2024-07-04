@@ -25,41 +25,36 @@ import kotlinx.coroutines.async;
 import uts.sdk.modules.yxTest.R;
 open class LoginListener : Activity, IUiListener {
     open var mTencent: Tencent? = null;
-    constructor() : super() {}
-    open fun init() {
+    constructor() : super() {
         Tencent.setIsPermissionGranted(true, Build.MODEL);
         this.mTencent = Tencent.createInstance("1106089718", UTSAndroid.getUniActivity()!!, "uts.sdk.modules.yxTest.fileprovider");
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        console.log("onActivityResult", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:20");
+    open fun onAppActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        console.log("onAppActivityResult", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:19");
     }
     override fun onComplete(response: Any): Unit {
-        console.log(response, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:25");
+        console.log(response, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:23");
     }
     override fun onCancel(): Unit {
-        console.log("onCancel", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:28");
+        console.log("onCancel", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:26");
     }
     override fun onError(_param0: UiError): Unit {
-        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:31");
-        console.log("onError", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:32");
+        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:29");
+        console.log("onError", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:30");
     }
     override fun onWarning(_param0: Int): Unit {
-        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:35");
-        console.log("onWarning", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:36");
+        console.log(_param0, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:33");
+        console.log("onWarning", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:34");
     }
 }
 open class QQ : Activity {
     open var mTencent: Tencent? = null;
     constructor() : super() {
-        console.log(121212, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:46");
         Tencent.setIsPermissionGranted(true, Build.MODEL);
         this.mTencent = Tencent.createInstance("1106089718", UTSAndroid.getUniActivity()!!, "uts.sdk.modules.yxTest.fileprovider");
     }
-    open fun onAppActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        console.log("onAppActivityResult", " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:53");
-    }
     open fun register() {
-        console.log("this.mTencent", this.mTencent, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:61");
+        console.log("this.mTencent", this.mTencent, " at uni_modules/yx-test/utssdk/app-android/src/QQ.uts:54");
         if (!this.mTencent!!.isSessionValid()) {
             this.mTencent!!.login(UTSAndroid.getUniActivity()!!, "get_simple_userinfo", LoginListener());
         }
