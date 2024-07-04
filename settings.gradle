@@ -19,7 +19,7 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "debug-kux-audio-player-app"
+rootProject.name = "云迅科技-app"
 include ':app'
 include ':uniappx'
-include ':kux-audio-player'
+include ':yx-test'

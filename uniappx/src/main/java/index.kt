@@ -1,5 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "USELESS_CAST", "INAPPLICABLE_JVM_NAME")
-package uni.UNI79D8002;
+package uni.UNIAB2426E;
 import io.dcloud.uniapp.*;
 import io.dcloud.uniapp.extapi.*;
 import io.dcloud.uniapp.framework.*;
@@ -72,10 +72,7 @@ val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentO
 }
 );
 val GenPagesIndexIndexClass = CreateVueComponent(GenPagesIndexIndex::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIndex.inheritAttrs, inject = GenPagesIndexIndex.inject, props = GenPagesIndexIndex.props, propsNeedCastKeys = GenPagesIndexIndex.propsNeedCastKeys, emits = GenPagesIndexIndex.emits, components = GenPagesIndexIndex.components, styles = GenPagesIndexIndex.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenPagesIndexIndex.setup(props as GenPagesIndexIndex);
-    }
-    );
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIndex.inheritAttrs, inject = GenPagesIndexIndex.inject, props = GenPagesIndexIndex.props, propsNeedCastKeys = GenPagesIndexIndex.propsNeedCastKeys, emits = GenPagesIndexIndex.emits, components = GenPagesIndexIndex.components, styles = GenPagesIndexIndex.styles);
 }
 , fun(instance): GenPagesIndexIndex {
     return GenPagesIndexIndex(instance);
@@ -93,11 +90,13 @@ fun main(app: IApp) {
     (createApp()["app"] as VueApp).mount(app);
 }
 open class UniAppConfig : AppConfig {
-    override var name: String = "debug-kux-audio-player";
-    override var appid: String = "__UNI__79D8002";
+    override var name: String = "云迅科技";
+    override var appid: String = "__UNI__AB2426E";
     override var versionName: String = "1.0.0";
     override var versionCode: String = "100";
-    override var uniCompilerVersion: String = "4.19";
+    override var uniCompilerVersion: String = "4.22";
+    override var splashScreen: Map<String, Any>? = utsMapOf("autoClose" to "onReady");
+    override var defaultAppTheme: String = "auto";
     constructor(){}
 }
 fun definePageRoutes() {
@@ -105,7 +104,6 @@ fun definePageRoutes() {
 }
 val __uniTabBar: Map<String, Any?>? = null;
 val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationBarTitleText" to "uni-app x"));
-@Suppress("UNCHECKED_CAST")
 fun defineAppConfig() {
     __uniConfig.entryPagePath = "/pages/index/index";
     __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uni-app x", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8");
